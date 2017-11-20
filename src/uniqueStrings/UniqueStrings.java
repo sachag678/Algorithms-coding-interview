@@ -4,7 +4,8 @@ import java.util.HashMap;
 
 /**
  * Two different methods for testing if a string has unique characters. 
- * Shows the speed difference in these method. The smarter method is almost 10x faster. The joy of hashmaps.  
+ * Shows the speed difference in these method. The smarter method is almost 10x faster. The joy of hashmaps.
+ * @author sachagunaratne  
  * */
 
 public class UniqueStrings {
