@@ -38,14 +38,33 @@ public class UniqueStrings {
 		return true;
 	}
 	
+	/**
+	 * Using a int array to keep track of the chars
+	 * */
+	public boolean hasUniqueUseIntArray(String s){
+		int [] char_array = new int[128];
+		for(int i=0;i<s.length();i++){
+			int chara = s.charAt(i);
+			if(char_array[i]!=0){
+				return false;
+			}
+			char_array[i]=chara;
+		}
+		return true;
+	}
+	
 	public static void main(String [] args){
 		UniqueStrings test = new UniqueStrings();
 		long startTime = System.nanoTime();
-		test.hasUniqueBruteForce("cahrimeykw");
+		test.hasUniqueBruteForce("cahrimeykwfdyjfhfgyj");
 		long stopTime = System.nanoTime();
 		System.out.println(stopTime - startTime);
 		startTime = System.nanoTime();
-		test.hasUniqueBruteForce("cahrimeykw");
+		test.hasUniqueBruteForce("cahrimeykwfdyjfhfgyj");
+		stopTime = System.nanoTime();
+		System.out.println(stopTime - startTime);
+		startTime = System.nanoTime();
+		test.hasUniqueUseIntArray("cahrimeykwfdyjfhfgyj");
 		stopTime = System.nanoTime();
 		System.out.println(stopTime - startTime);
 	}
