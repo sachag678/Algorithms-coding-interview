@@ -37,6 +37,29 @@ public class CheckPermutations {
 		return true;
 	}
 	
+	public boolean check3(String s1, String s2){
+		if(s1.length()!=s2.length()){
+			return false;
+		}
+		
+		HashMap<Character,Integer> char_array = new HashMap<>();
+		
+		for(char c: s1.toCharArray()){
+			if(char_array.get(c)!=null){
+				char_array.put(c,char_array.get(c)+1);
+			}else{
+				char_array.put(c,1);
+			}
+		}
+		
+		for(int i=0;i<s1.length();i++){
+			char c = s2.charAt(i);
+			char_array.put(c,char_array.get(c)-1);
+			if(char_array.get(c)<0){return false;}
+		}
+		return true;
+	}
+	
 	
 	
 	public static void main(String [] ali){
@@ -46,7 +69,7 @@ public class CheckPermutations {
 		CheckPermutations p = new CheckPermutations();
 		
 		startTime = System.nanoTime();
-		p.check2("care", "race");
+		p.check3("care", "race");
 		stopTime = System.nanoTime();
 		System.out.println(stopTime - startTime);
 		
