@@ -39,7 +39,7 @@ public class UniqueStrings {
 	}
 	
 	/**
-	 * Using a int array to keep track of the chars
+	 * Using a int array to keep track of the chars. Not the best idea because of the setsize. 
 	 * */
 	public boolean hasUniqueUseIntArray(String s){
 		int [] char_array = new int[128];
