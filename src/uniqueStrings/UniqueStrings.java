@@ -30,10 +30,11 @@ public class UniqueStrings {
 	public boolean hasUniqueSmart(String s){
 		HashMap<Character, Integer> map = new HashMap<Character,Integer>();
 		for(int i=0;i<s.length();i++){
-			if(map.get(s.charAt(i)) != null){
+			char chara = s.charAt(i);
+			if(map.get(chara) != null){
 				return false;
 			}
-			map.put(s.charAt(i), 1);
+			map.put(chara, 1);
 		}
 		return true;
 	}
@@ -54,18 +55,34 @@ public class UniqueStrings {
 	}
 	
 	public static void main(String [] args){
+		long startTime = 0;
+		long stopTime = 0;
+		int testcase = 2;
+		
 		UniqueStrings test = new UniqueStrings();
-		long startTime = System.nanoTime();
-		test.hasUniqueBruteForce("cahrimeykwfdyjfhfgyj");
-		long stopTime = System.nanoTime();
-		System.out.println(stopTime - startTime);
-		startTime = System.nanoTime();
-		test.hasUniqueBruteForce("cahrimeykwfdyjfhfgyj");
-		stopTime = System.nanoTime();
-		System.out.println(stopTime - startTime);
-		startTime = System.nanoTime();
-		test.hasUniqueUseIntArray("cahrimeykwfdyjfhfgyj");
-		stopTime = System.nanoTime();
-		System.out.println(stopTime - startTime);
+		switch(testcase) {
+		
+		case 1:
+			startTime = System.nanoTime();
+			test.hasUniqueBruteForce("cahrimeykwfdyjfhfgyj");
+			stopTime = System.nanoTime();
+			System.out.println(stopTime - startTime);
+			break;
+		
+		case 2:
+			startTime = System.nanoTime();
+			test.hasUniqueSmart("cahrimeykwfdyjfhfgyj");
+			stopTime = System.nanoTime();
+			System.out.println(stopTime - startTime);
+			break;
+		
+		case 3:
+			startTime = System.nanoTime();
+			test.hasUniqueUseIntArray("cahrimeykwfdyjfhfgyj");
+			stopTime = System.nanoTime();
+			System.out.println(stopTime - startTime);
+			break;
+		
+		}
 	}
 }

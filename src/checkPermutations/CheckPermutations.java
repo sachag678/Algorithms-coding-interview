@@ -66,18 +66,34 @@ public class CheckPermutations {
 		long startTime = 0;
 		long stopTime = 0;
 		
+		int test = 2;
+		
 		CheckPermutations p = new CheckPermutations();
 		
-		startTime = System.nanoTime();
-		p.check3("care", "race");
-		stopTime = System.nanoTime();
-		System.out.println(stopTime - startTime);
+		switch(test){
 		
-//		startTime = System.nanoTime();
-//		p.check("care", "race");
-//		stopTime = System.nanoTime();
-//		System.out.println(stopTime - startTime);
-//		
+		case 1:
+			startTime = System.nanoTime();
+			p.check("care", "race");
+			stopTime = System.nanoTime();
+			System.out.println(stopTime - startTime);
+			break;
+		
+		case 2:
+			startTime = System.nanoTime();
+			p.check2("care", "race");
+			stopTime = System.nanoTime();
+			System.out.println(stopTime - startTime);
+			break;
+		
+		case 3:
+			startTime = System.nanoTime();
+			p.check3("care", "race");
+			stopTime = System.nanoTime();
+			System.out.println(stopTime - startTime);
+			break;
+		
+		}		
 
 		
 	}
