@@ -18,6 +18,8 @@ public class URLify {
 		return s;
 	}
 	
+	
+	
 	public static void main(String[] args) {
 		URLify url = new URLify();
 		char [] s= {'h','u','m','a','n',' ','b',' ','i','n','g','s',' ',' ',' ',' '}; 
