@@ -1,4 +1,5 @@
-#check if a given string is one edit or zero edits away from another given string
+#check if a given string is one edit or zero edits away from another given string. There is an assumption that order of the chars in the string
+#doesn't matter. If the order does matter, a different approach may be taken. 
 
 def check(word1, word2):
 	'''Finds the longer word and then iterates through the longer word and checks to see if there are more than two differences
