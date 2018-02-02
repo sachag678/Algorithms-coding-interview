@@ -1,5 +1,6 @@
 #check if a given string is one edit or zero edits away from another given string. There is an assumption that order of the chars in the string
 #doesn't matter. If the order does matter, a different approach may be taken. 
+import timeit
 
 def check(word1, word2):
 	'''Finds the longer word and then iterates through the longer word and checks to see if there are more than two differences
@@ -26,7 +27,7 @@ def check(word1, word2):
 
 	return True
 
-def checkSets(word1, word2):
+def checkSets(word1,word2):
 	'''Checks whether the size of the set that is the intersection between the two words is 1 smaller than the size of the largest word'''
 	return max(len(word1),len(word2))-1<=len(set(word1).intersection(set(word2)))
 
