@@ -12,7 +12,10 @@ def is_substring(s1, s2):
 
 def is_rotation(s1, s2):
     """Check if s2 reversed is a substring of s1."""
-    return is_substring(s1, s2[::-1])
+    if len(s1) == len(s2):
+        return is_substring(s1, s2[::-1])
+    else:
+        return False
 
 if __name__ == '__main__':
 
